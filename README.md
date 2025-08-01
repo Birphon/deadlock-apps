@@ -1,1 +1,1 @@
-# deadlock-vite
+# deadlock-apps
