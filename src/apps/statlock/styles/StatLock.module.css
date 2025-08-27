@@ -1,0 +1,272 @@
+/* styles/StatLock.module.css */
+
+.statlock-container {
+  min-height: 100vh;
+  background-color: #f3f4f6;
+  padding: 1rem;
+}
+
+.main-content {
+  max-width: 1280px;
+  margin: 0 auto;
+}
+
+.title {
+  font-size: 1.875rem;
+  font-weight: 700;
+  text-align: center;
+  margin-bottom: 2rem;
+  color: #1f2937;
+}
+
+.grid-layout {
+  display: grid;
+  grid-template-columns: 1fr;
+  gap: 1.5rem;
+}
+
+@media (min-width: 1024px) {
+  .grid-layout {
+    grid-template-columns: 1fr 1fr;
+  }
+}
+
+.panel {
+  background-color: white;
+  border-radius: 0.5rem;
+  box-shadow: 0 4px 6px -1px rgba(0, 0, 0, 0.1), 0 2px 4px -1px rgba(0, 0, 0, 0.06);
+  padding: 1.5rem;
+}
+
+.form-group {
+  margin-bottom: 1rem;
+}
+
+.label {
+  display: block;
+  font-size: 0.875rem;
+  font-weight: 500;
+  color: #374151;
+  margin-bottom: 0.5rem;
+}
+
+.input {
+  width: 100%;
+  padding: 0.75rem;
+  border: 1px solid #d1d5db;
+  border-radius: 0.375rem;
+  font-size: 0.875rem;
+}
+
+.input:focus {
+  outline: none;
+  border-color: #3b82f6;
+  box-shadow: 0 0 0 3px rgba(59, 130, 246, 0.1);
+}
+
+.textarea {
+  width: 100%;
+  padding: 0.75rem;
+  border: 1px solid #d1d5db;
+  border-radius: 0.375rem;
+  font-size: 0.875rem;
+  resize: vertical;
+  min-height: 200px;
+  font-family: 'Consolas', 'Monaco', 'Courier New', monospace;
+}
+
+.button-group {
+  display: flex;
+  flex-wrap: wrap;
+  gap: 0.75rem;
+}
+
+.button {
+  flex: 1;
+  min-width: 120px;
+  padding: 0.5rem 1rem;
+  font-weight: 500;
+  border-radius: 0.375rem;
+  border: none;
+  cursor: pointer;
+  transition: background-color 0.2s ease-in-out;
+}
+
+.button-primary {
+  background-color: #3b82f6;
+  color: white;
+}
+
+.button-primary:hover:not(:disabled) {
+  background-color: #2563eb;
+}
+
+.button-secondary {
+  background-color: #6b7280;
+  color: white;
+}
+
+.button-secondary:hover:not(:disabled) {
+  background-color: #4b5563;
+}
+
+.button-danger {
+  background-color: #dc2626;
+  color: white;
+}
+
+.button-danger:hover:not(:disabled) {
+  background-color: #b91c1c;
+}
+
+.button-success {
+  background-color: #059669;
+  color: white;
+}
+
+.button-success:hover:not(:disabled) {
+  background-color: #047857;
+}
+
+.button:disabled {
+  background-color: #9ca3af;
+  cursor: not-allowed;
+}
+
+.data-item {
+  border: 1px solid #e5e7eb;
+  border-radius: 0.5rem;
+  padding: 1rem;
+  cursor: pointer;
+  transition: all 0.15s ease-in-out;
+}
+
+.data-item:hover {
+  background-color: #f9fafb;
+  border-color: #d1d5db;
+}
+
+.data-item-header {
+  display: flex;
+  justify-content: space-between;
+  align-items: flex-start;
+  margin-bottom: 0.5rem;
+}
+
+.data-item-name {
+  font-weight: 500;
+  color: #111827;
+  transition: color 0.15s ease-in-out;
+}
+
+.data-item:hover .data-item-name {
+  color: #2563eb;
+}
+
+.data-item-date {
+  font-size: 0.75rem;
+  color: #6b7280;
+  margin-left: 0.5rem;
+  flex-shrink: 0;
+}
+
+.data-item-preview {
+  font-size: 0.875rem;
+  color: #4b5563;
+  line-height: 1.5;
+  white-space: pre-wrap;
+}
+
+.data-item-more {
+  margin-top: 0.5rem;
+  font-size: 0.75rem;
+  color: #2563eb;
+  transition: color 0.15s ease-in-out;
+}
+
+.data-item:hover .data-item-more {
+  color: #1d4ed8;
+}
+
+.empty-state {
+  text-align: center;
+  padding: 3rem 0;
+  color: #6b7280;
+}
+
+.empty-state-icon {
+  font-size: 2.5rem;
+  margin-bottom: 1rem;
+}
+
+.empty-state-title {
+  font-size: 1.125rem;
+  margin-bottom: 0.5rem;
+}
+
+.empty-state-description {
+  font-size: 0.875rem;
+}
+
+.scrollable-area {
+  max-height: 600px;
+  overflow-y: auto;
+}
+
+.header-controls {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  margin-bottom: 1rem;
+}
+
+.header-title {
+  font-size: 1.25rem;
+  font-weight: 600;
+  color: #111827;
+}
+
+.control-group {
+  display: flex;
+  gap: 0.5rem;
+}
+
+/* Custom scrollbar styling */
+.scrollable-area::-webkit-scrollbar {
+  width: 8px;
+}
+
+.scrollable-area::-webkit-scrollbar-track {
+  background: #f1f5f9;
+  border-radius: 4px;
+}
+
+.scrollable-area::-webkit-scrollbar-thumb {
+  background: #cbd5e1;
+  border-radius: 4px;
+}
+
+.scrollable-area::-webkit-scrollbar-thumb:hover {
+  background: #94a3b8;
+}
+
+/* Responsive adjustments */
+@media (max-width: 640px) {
+  .button-group {
+    flex-direction: column;
+  }
+  
+  .button {
+    min-width: auto;
+  }
+  
+  .header-controls {
+    flex-direction: column;
+    gap: 1rem;
+    align-items: stretch;
+  }
+  
+  .control-group {
+    justify-content: center;
+  }
+}
