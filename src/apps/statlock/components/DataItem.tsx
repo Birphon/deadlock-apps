@@ -25,26 +25,23 @@ const DataItem: React.FC<DataItemProps> = ({ item, onClick }) => {
   };
 
   return (
-    <div
-      onClick={onClick}
-      className="border border-gray-200 rounded-lg p-4 cursor-pointer hover:bg-gray-50 hover:border-gray-300 transition-all duration-150 group"
-    >
-      <div className="flex justify-between items-start mb-2">
-        <h3 className="font-medium text-gray-900 group-hover:text-blue-600 transition-colors">
+    <div onClick={onClick}>
+      <div>
+        <h3>
           {item.name}
         </h3>
-        <span className="text-xs text-gray-500 ml-2 flex-shrink-0">
+        <span>
           {formatDate(item.updatedAt)}
         </span>
       </div>
       
-      <p className="text-sm text-gray-600 leading-relaxed whitespace-pre-wrap">
+      <p>
         {getPreview(item.input)}
       </p>
       
       {item.input.length > 100 && (
-        <div className="mt-2">
-          <span className="text-xs text-blue-600 group-hover:text-blue-700">
+        <div>
+          <span>
             Click to view full content →
           </span>
         </div>

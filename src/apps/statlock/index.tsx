@@ -46,24 +46,13 @@ const StatLock: React.FC = () => {
   };
 
   return (
-    <div style={{ minHeight: '100vh', width: '100vw', backgroundColor: '#f3f4f6' }}>
-      <div style={{ width: '100%', padding: '2rem' }}>
-        <h1 style={{ 
-          fontSize: '1.875rem', 
-          fontWeight: 'bold', 
-          textAlign: 'center', 
-          marginBottom: '2rem', 
-          color: '#1f2937' 
-        }}>
+    <div>
+      <div>
+        <h1>
           StatLock - Deadlock Stats Manager
         </h1>
         
-        <div style={{ 
-          display: 'grid', 
-          gridTemplateColumns: window.innerWidth >= 1024 ? '1fr 1fr' : '1fr',
-          gap: '1.5rem',
-          width: '100%'
-        }}>
+        <div>
           <LeftPanel
             selectedItem={selectedItem}
             onSave={handleSave}

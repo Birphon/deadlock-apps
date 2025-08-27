@@ -23,11 +23,11 @@ const DownloadButton: React.FC<DownloadButtonProps> = ({ statData }) => {
     <button
       onClick={handleDownload}
       disabled={!hasItems}
-      className="px-4 py-2 bg-green-600 text-white font-medium rounded-md hover:bg-green-700 disabled:bg-gray-400 disabled:cursor-not-allowed transition-colors flex items-center gap-2"
       title={hasItems ? 'Download all entries as JSON' : 'No entries to download'}
     >
       <svg 
-        className="w-4 h-4" 
+        width="16"
+        height="16"
         fill="none" 
         stroke="currentColor" 
         viewBox="0 0 24 24"

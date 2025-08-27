@@ -20,19 +20,18 @@ const RightPanel: React.FC<RightPanelProps> = ({
   const hasItems = items.length > 0;
 
   return (
-    <div className="bg-white rounded-lg shadow-md p-6">
-      <div className="flex justify-between items-center mb-4">
-        <h2 className="text-xl font-semibold text-gray-800">
+    <div>
+      <div>
+        <h2>
           Saved Entries ({items.length})
         </h2>
         
-        <div className="flex gap-2">
+        <div>
           <DownloadButton statData={statData} />
           
           {hasItems && (
             <button
               onClick={onClearAll}
-              className="px-4 py-2 bg-red-600 text-white font-medium rounded-md hover:bg-red-700 transition-colors"
             >
               Clear All
             </button>
@@ -40,12 +39,12 @@ const RightPanel: React.FC<RightPanelProps> = ({
         </div>
       </div>
 
-      <div className="space-y-3 max-h-[600px] overflow-y-auto">
+      <div>
         {!hasItems ? (
-          <div className="text-center py-12 text-gray-500">
-            <div className="text-4xl mb-4">📋</div>
-            <p className="text-lg mb-2">No entries yet</p>
-            <p className="text-sm">Add some stats using the form on the left</p>
+          <div>
+            <div>📋</div>
+            <p>No entries yet</p>
+            <p>Add some stats using the form on the left</p>
           </div>
         ) : (
           items
