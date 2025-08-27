@@ -4,7 +4,7 @@ import React, { useState } from 'react';
 import LeftPanel from './components/LeftPanel';
 import RightPanel from './components/RightPanel';
 import { useStatData } from './hooks/useStatData';
-import { StatItem } from './types';
+import type { StatItem } from './types';
 
 const StatLock: React.FC = () => {
   const { 
@@ -25,8 +25,11 @@ const StatLock: React.FC = () => {
       // Update existing item
       addOrUpdateStat(selectedItem.id, name, input);
     } else {
-      // Create new item
-      addOrUpdateStat(crypto.randomUUID(), name, input);
+      // Create new item - use crypto.randomUUID() if available, fallback to timestamp + random
+      const id = typeof crypto !== 'undefined' && crypto.randomUUID 
+        ? crypto.randomUUID() 
+        : `${Date.now()}-${Math.random().toString(36).substr(2, 9)}`;
+      addOrUpdateStat(id, name, input);
     }
     setSelectedItem(null);
   };
@@ -43,13 +46,24 @@ const StatLock: React.FC = () => {
   };
 
   return (
-    <div className="min-h-screen bg-gray-100 p-4">
-      <div className="max-w-7xl mx-auto">
-        <h1 className="text-3xl font-bold text-center mb-8 text-gray-800">
+    <div style={{ minHeight: '100vh', width: '100vw', backgroundColor: '#f3f4f6' }}>
+      <div style={{ width: '100%', padding: '2rem' }}>
+        <h1 style={{ 
+          fontSize: '1.875rem', 
+          fontWeight: 'bold', 
+          textAlign: 'center', 
+          marginBottom: '2rem', 
+          color: '#1f2937' 
+        }}>
           StatLock - Deadlock Stats Manager
         </h1>
         
-        <div className="grid grid-cols-1 lg:grid-cols-2 gap-6">
+        <div style={{ 
+          display: 'grid', 
+          gridTemplateColumns: window.innerWidth >= 1024 ? '1fr 1fr' : '1fr',
+          gap: '1.5rem',
+          width: '100%'
+        }}>
           <LeftPanel
             selectedItem={selectedItem}
             onSave={handleSave}

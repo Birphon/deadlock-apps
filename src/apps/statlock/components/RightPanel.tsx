@@ -1,7 +1,7 @@
 // components/RightPanel.tsx
 
 import React from 'react';
-import { StatData, StatItem } from '../types';
+import type { StatData, StatItem } from '../types';
 import DataItem from './DataItem';
 import DownloadButton from './DownloadButton';
 

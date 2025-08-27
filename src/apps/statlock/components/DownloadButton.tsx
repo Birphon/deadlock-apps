@@ -1,7 +1,7 @@
 // components/DownloadButton.tsx
 
 import React from 'react';
-import { StatData } from '../types';
+import type { StatData } from '../types';
 import { downloadJSON } from '../utils/jsonDownload';
 
 interface DownloadButtonProps {

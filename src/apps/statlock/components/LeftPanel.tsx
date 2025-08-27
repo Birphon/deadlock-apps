@@ -1,7 +1,7 @@
 // components/LeftPanel.tsx
 
 import React, { useEffect, useState } from 'react';
-import { StatItem } from '../types';
+import type { StatItem } from '../types';
 
 interface LeftPanelProps {
   selectedItem: StatItem | null;

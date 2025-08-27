@@ -1,7 +1,7 @@
 // hooks/useStatData.tsx
 
 import { useCallback, useState } from 'react';
-import { StatData, StatItem } from '../types';
+import type { StatData, StatItem } from '../types';
 import { useLocalStorage } from './useLocalStorage';
 
 const STORAGE_KEY = 'deadlock-statlock-data';

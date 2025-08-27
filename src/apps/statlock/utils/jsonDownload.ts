@@ -1,6 +1,6 @@
 // utils/jsonDownload.ts
 
-import { StatData } from '../types';
+import type { StatData } from '../types';
 
 export const downloadJSON = (data: StatData, filename: string): void => {
   try {

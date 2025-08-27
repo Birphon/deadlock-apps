@@ -1,7 +1,7 @@
 // components/DataItem.tsx
 
 import React from 'react';
-import { StatItem } from '../types';
+import type { StatItem } from '../types';
 
 interface DataItemProps {
   item: StatItem;
